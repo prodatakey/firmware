@@ -268,6 +268,12 @@ Params: gpiopin                 GPIO connected to the sensor's DATA output.
                                 (default 4)
 
 
+Name:   dionaudio-loco
+Info:   Configures the Dion Audio LOCO DAC-AMP
+Load:   dtoverlay=dionaudio-loco
+Params: <None>
+
+
 Name:   dpi24
 Info:   Overlay for a generic 24-bit DPI display
         This uses GPIOs 0-27 (so no I2C, uart etc.), and activates the output
@@ -371,8 +377,14 @@ Params: 24db_digital_gain       Allow gain to be applied via the PCM512x codec
 
 
 Name:   hifiberry-digi
-Info:   Configures the HifiBerry Digi audio card
+Info:   Configures the HifiBerry Digi and Digi+ audio card
 Load:   dtoverlay=hifiberry-digi
+Params: <None>
+
+
+Name:   hifiberry-digi-pro
+Info:   Configures the HifiBerry Digi+ Pro audio card
+Load:   dtoverlay=hifiberry-digi-pro
 Params: <None>
 
 
@@ -785,6 +797,8 @@ Name:   pps-gpio
 Info:   Configures the pps-gpio (pulse-per-second time signal via GPIO).
 Load:   dtoverlay=pps-gpio,<param>=<val>
 Params: gpiopin                 Input GPIO (default "18")
+        assert_falling_edge     When present, assert is indicated by a falling
+                                edge, rather than by a rising edge
 
 
 Name:   pwm
